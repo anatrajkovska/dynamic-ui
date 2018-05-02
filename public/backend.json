@@ -1,0 +1,65 @@
+{
+    "type": "mongodb",
+    "host": {
+      "required": true,
+      "type": "string"
+    },
+    "database": {
+      "required": true,
+      "type": "string"
+    },
+    "credentials": {
+      "type": "object",
+      "required": true,
+      "properties": {
+        "username": {
+          "type": "string",
+          "required": true
+        },
+        "password": {
+          "type": "string",
+          "required": true
+        }
+      }
+    },
+    "collections": {
+      "type": "map",
+      "key": {
+        "type": "string"
+      },
+      "value": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "required": true
+          },
+          "indexes": {
+            "elementType": "object",
+            "elementProperties": {
+              "columns": {
+                "array": true,
+                "elementType": "string",
+                "required": true
+              },
+              "unique": {
+                "type": "boolean",
+                "required": true
+              }
+            },
+            "array": true,
+            "type": "array"
+          },
+          "enableTtl": {
+            "type": "boolean"
+          },
+          "ttl": {
+            "type": "integer"
+          },
+          "ttlAttribute": {
+            "type": "string"
+          }
+        }
+      }
+    }
+   }
