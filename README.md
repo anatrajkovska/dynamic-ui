@@ -1,4 +1,4 @@
-## simple-todo-app
+## dynamic-ui
 
 Create dynamic UI with ReactJS based on a backend specification.
  
